@@ -383,6 +383,28 @@ form>button {
     gap: 35px;
 }
 
+.mobile-nav__list li {
+    width: 100%;
+}
+
+.mobile-nav {
+    width: 100%;
+}
+
+.mobile-nav__list {
+    width: 100%;
+}
+
+.mobile-nav__list li {
+    width: 100%;
+}
+
+.mobile-nav__link {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .mobile-nav__link {
     text-decoration: none;
     color: var(--white);
@@ -424,6 +446,25 @@ form>button {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(6px);
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 50;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
 }
 
 @media only screen and (max-width: 1190px) {

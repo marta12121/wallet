@@ -34,6 +34,7 @@
                     <li><a href="#" class="mobile-nav__link mobile-nav__link_login-btn">Log in</a></li>
                 </ul>
             </div>
+            <div class="overlay" id="overlay"></div>
         </div>
     </header>
     <main>
@@ -124,11 +125,27 @@
     <script>
         const mobileMenu = document.querySelector('.mobile-menu');
         const mobileNav = document.getElementById('mobileNav');
+        const overlay = document.getElementById('overlay');
+        const closeMobileMenu = function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+        };
 
-        mobileMenu.addEventListener('click', () => {
-            mobileNav.classList.toggle('active');
+        mobileMenu.addEventListener('click', function() {
+            const isOpen = mobileNav.classList.contains('active');
+
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                mobileNav.classList.add('active');
+                overlay.classList.add('active');
+            }
         });
+
+        overlay.addEventListener('click', closeMobileMenu);
     </script>
+
+
 
 </body>
 
